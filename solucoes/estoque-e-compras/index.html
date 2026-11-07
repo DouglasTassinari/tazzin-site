@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estoque e Compras · Tazzin</title>
+<meta name="description" content="Estoque é capital. Cobertura, ponto de reposição, risco de ruptura, capital parado e compras a receber em um painel, com simulador para testar a lógica.">
+<link rel="canonical" href="https://douglastassinari.github.io/tazzin-site/solucoes/estoque-e-compras/">
+<meta name="theme-color" content="#0D1B2A">
+<meta property="og:site_name" content="Tazzin">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Estoque e Compras · Tazzin">
+<meta property="og:description" content="Estoque é capital. Cobertura, ponto de reposição, risco de ruptura, capital parado e compras a receber em um painel, com simulador para testar a lógica.">
+<meta property="og:url" content="https://douglastassinari.github.io/tazzin-site/solucoes/estoque-e-compras/">
+<meta property="og:image" content="https://douglastassinari.github.io/tazzin-site/assets/img/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://douglastassinari.github.io/tazzin-site/"}, {"@type": "ListItem", "position": 2, "name": "Soluções", "item": "https://douglastassinari.github.io/tazzin-site/solucoes/"}, {"@type": "ListItem", "position": 3, "name": "Estoque e Compras", "item": "https://douglastassinari.github.io/tazzin-site/solucoes/estoque-e-compras/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="hd"><div class="wrap">
+<a class="logo" href="../../" aria-label="Tazzin, página inicial"><img src="../../assets/img/logo_full.png" alt="Tazzin — menos planilhas, mais controle" width="152" height="34"></a>
+<button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<nav class="nav" id="nav" aria-label="Principal">
+<div class="dd cur"><button type="button" aria-expanded="false" aria-haspopup="true">Soluções <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="panel"><a href="../../solucoes/calibracao-e-manutencao/" aria-label="Calibração e Manutenção"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a8 8 0 1116 0"/><path d="M12 17l4-6"/></svg></span><span><b>Calibração e Manutenção</b><small>Instrumentos, vencimentos e certificados sob controle.</small></span></a><a href="../../solucoes/inteligencia-de-mercado/" aria-label="Inteligência de Mercado"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><span><b>Inteligência de Mercado</b><small>Concorrentes e mercado com fonte em cada dado.</small></span></a><a href="../../solucoes/relacionamento-com-clientes/" aria-label="Relacionamento com Clientes"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 4.5a3.5 3.5 0 010 7M18 14c2.2.6 3.5 2.4 3.5 5"/></svg></span><span><b>Relacionamento com Clientes</b><small>Quem precisa de atenção, na hora certa.</small></span></a><a href="../../solucoes/producao-e-operadores/" aria-label="Produção e Operadores"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 3.5V10l6 3.5V6h6v15z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></span><span><b>Produção e Operadores</b><small>Onde o tempo da fábrica se perde.</small></span></a><a href="../../solucoes/estoque-e-compras/" aria-label="Estoque e Compras"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span><span><b>Estoque e Compras</b><small>Capital parado, ruptura e compras a receber.</small></span></a><a href="../../solucoes/sob-medida/" aria-label="Sob Medida"><span class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><span><b>Sob Medida</b><small>A camada que falta ao lado do seu ERP.</small></span></a></div></div>
+<a href="../../modulos/">Módulos</a><a href="../../metodo/">Método</a><a href="../../qualidade/">Qualidade</a><a href="../../sobre/">Sobre</a><a href="../../contato/">Contato</a>
+<a class="btn btn-p btn-s" href="https://tazzin.streamlit.app/" target="_blank" rel="noopener">Ver a demonstração</a>
+</nav></div></header>
+<main id="conteudo">
+<style>
+.ph .split>div,.split>*,.grid>*{min-width:0}
+.es-ctl{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:flex-end;margin-bottom:6px}
+.es-ctl .field{margin:0;min-width:170px;flex:1}
+.es-ctl .field output{font-weight:700;color:var(--navy)}
+.es-ctl input[type=range]{accent-color:var(--green);padding:0;border:0;height:28px}
+.es-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--g200)}
+.es-kpis .kpi b{font-variant-numeric:tabular-nums}
+.es-tbl input{width:84px;font:inherit;font-size:13.5px;padding:6px 8px;border:1.5px solid var(--g200);border-radius:8px;text-align:right;font-variant-numeric:tabular-nums}
+.es-tbl input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.es-tbl td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.es-tbl th.n{text-align:right}
+.es-tbl td small{display:block;color:var(--g500);font-size:12px}
+.es-tbl tr.r-late td{background:#fff7f7}
+.es-sort{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 18px;border-bottom:1px solid var(--g200);background:var(--g50)}
+.es-sort label{font-size:13px;font-weight:600;color:var(--navy)}
+.es-sort select{font:inherit;font-size:14px;padding:7px 10px;border:1.5px solid var(--g200);border-radius:8px;background:#fff}
+.es-msgs{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.es-msgs li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;padding:11px 13px;border-radius:10px;background:var(--g50);color:var(--g600)}
+.es-msgs li.w{background:var(--amber-soft);color:#78350F}
+.es-msgs li.e{background:var(--red-soft);color:#7F1D1D}
+.es-msgs li.o{background:var(--green-soft);color:#14532D}
+.es-msgs li .ic{margin-top:2px}
+.es-hero-card .row2{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--g200);font-size:14px;color:var(--g600)}
+.es-hero-card .row2:first-of-type{border-top:0}
+.es-hero-card .row2 b{color:var(--navy);font-variant-numeric:tabular-nums}
+.es-eq{background:var(--navy);color:#cfd6df;border-radius:var(--r);padding:26px;font-size:15px}
+.es-eq h3{color:#fff;font-size:17px;margin-bottom:12px}
+.es-eq code{display:block;background:rgba(255,255,255,.07);border-radius:9px;padding:10px 14px;margin:8px 0;font:500 13.5px/1.5 ui-monospace,Consolas,monospace;color:#d7f0d8;overflow-x:auto}
+@media(max-width:700px){.es-kpis{grid-template-columns:1fr 1fr}.es-kpis .kpi:nth-child(3){border-left:0}.es-kpis .kpi:nth-child(n+3){border-top:1px solid var(--g200)}.es-tbl input{width:70px}}
+</style>
+
+<section class="ph"><div class="wrap">
+<nav class="crumb" aria-label="Você está em"><a href="../../">Início</a><a href="../../solucoes/">Soluções</a><span aria-current="page">Estoque e Compras</span></nav>
+<div class="split"><div>
+<span class="eyebrow">Solução · Suprimentos</span>
+<h1>Estoque não é só mercadoria. <em>É capital.</em></h1>
+<p class="lead">Estoque demais é dinheiro parado. Estoque de menos é venda perdida e fábrica esperando material. A Tazzin mostra, item a item, quanto tempo cada estoque dura, o que pedir agora e o que chega a tempo.</p>
+<div class="cta">
+<a class="btn btn-p" href="#simulador">Testar o simulador</a>
+<a class="btn btn-g" href="../../contato/">Conversar sobre isto</a>
+</div>
+</div>
+<div>
+<div class="tool es-hero-card" role="group" aria-label="Resumo do simulador, com dados fictícios">
+<div class="th">Resumo do estoque <span>dados fictícios · muda com o simulador</span></div>
+<div class="tb">
+<div class="row2"><span>Itens com risco de ruptura</span><b id="hRisk">—</b></div>
+<div class="row2"><span>Capital em excesso</span><b id="hExc">—</b></div>
+<div class="row2"><span>Capital total em estoque</span><b id="hTot">—</b></div>
+<div class="row2"><span>Pedidos que chegam depois da ruptura</span><b id="hLate">—</b></div>
+</div>
+</div>
+</div></div>
+</div></section>
+
+<section class="sec">
+<div class="wrap">
+<span class="kicker">O problema</span>
+<h2>Dois erros opostos, o mesmo prejuízo</h2>
+<p class="sub">Quase toda empresa convive com os dois ao mesmo tempo: item parado há meses e item que acaba na véspera.</p>
+<div class="grid g3">
+<article class="card rv"><div class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div><h3>Capital parado</h3><p>Compra feita "para garantir" que vira prateleira cheia por meses. O dinheiro não volta e o espaço também faz falta.</p></article>
+<article class="card rv"><div class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1112 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div><h3>Ruptura de última hora</h3><p>O item acaba antes de chegar o pedido, a linha para, e a compra emergencial sai mais cara. O aviso precisava ter vindo semanas antes.</p></article>
+<article class="card rv"><div class="ico"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3>Compra sem contexto</h3><p>Quem compra não vê o consumo, quem consome não vê o prazo do fornecedor. Cada um decide com metade da informação.</p></article>
+</div>
+</div></section>
+
+<section class="sec alt" id="simulador">
+<div class="wrap">
+<span class="kicker">Experimente</span>
+<h2>Quanto tempo o seu estoque dura?</h2>
+<p class="sub">Oito itens fictícios de uma indústria. Altere o saldo e o consumo diário na tabela, ajuste a margem de segurança e a cobertura máxima desejada, e veja a situação de cada item, o capital em excesso e se o pedido chega antes de o item acabar.</p>
+
+<div class="tool">
+<div class="th">Simulador de cobertura <span>dados fictícios · valores editáveis</span></div>
+<div class="tb">
+<div class="es-ctl">
+<div class="field"><label for="esSeg">Margem de segurança: <output id="oSeg">5 dias</output></label><input type="range" id="esSeg" min="0" max="20" step="1" value="5"><span class="hint">Dias a mais, além do prazo do fornecedor, que você quer ter de folga.</span></div>
+<div class="field"><label for="esMax">Cobertura máxima desejada: <output id="oMax">60 dias</output></label><input type="range" id="esMax" min="15" max="180" step="5" value="60"><span class="hint">Acima disso, o que sobra é considerado capital em excesso.</span></div>
+</div>
+</div>
+<div class="es-kpis" aria-live="polite">
+<div class="kpi"><b id="kRisk">—</b><small>itens pedindo reposição já</small></div>
+<div class="kpi"><b id="kAtt">—</b><small>itens em atenção</small></div>
+<div class="kpi"><b id="kExc">—</b><small>capital em excesso</small></div>
+<div class="kpi"><b id="kTot">—</b><small>capital total em estoque</small></div>
+</div>
+<div class="es-sort"><label for="esOrd">Ordenar por</label>
+<select id="esOrd"><option value="cob">Menor cobertura primeiro</option><option value="exc">Maior capital em excesso</option><option value="nome">Nome do item</option></select></div>
+<div class="tblwrap"><table class="tbl es-tbl" id="esTbl">
+<caption class="sr" style="position:absolute;left:-999px">Itens de estoque fictícios com cobertura e situação</caption>
+<thead><tr><th scope="col">Item</th><th scope="col" class="n">Saldo</th><th scope="col" class="n">Consumo/dia</th><th scope="col" class="n">Prazo (dias)</th><th scope="col" class="n">Cobertura</th><th scope="col" class="n">Ponto de pedido</th><th scope="col" class="n">Excesso (R$)</th><th scope="col">Situação</th></tr></thead>
+<tbody id="esBody"></tbody></table></div>
+<div class="tf">Cobertura = saldo ÷ consumo diário. Ponto de pedido = consumo diário × (prazo do fornecedor + margem de segurança).</div>
+</div>
+
+<div style="height:30px"></div>
+<div class="grid g2" style="align-items:start">
+<div class="tool">
+<div class="th">Compras a receber <span>pedidos fictícios</span></div>
+<div class="tblwrap"><table class="tbl" id="poTbl">
+<thead><tr><th scope="col">Pedido</th><th scope="col">Item</th><th scope="col">Chega em</th><th scope="col">Status</th></tr></thead>
+<tbody id="poBody"></tbody></table></div>
+<div class="tf">Fluxo do pedido na plataforma: rascunho, enviado, confirmado e recebido (ou cancelado).</div>
+</div>
+<div>
+<h3 style="font-size:18px;margin-bottom:12px">O que a Tazzin avisa</h3>
+<ul class="es-msgs" id="esMsgs" aria-live="polite"></ul>
+<div style="height:18px"></div>
+<div class="es-eq">
+<h3>A lógica por trás</h3>
+<p style="margin:0 0 4px">Em um projeto, estes cálculos usam o consumo real de cada item e o prazo de cada fornecedor.</p>
+<code>cobertura (dias) = saldo ÷ consumo por dia</code>
+<code>risco de ruptura = cobertura &lt; prazo + margem</code>
+<code>excesso = (saldo − consumo × cobertura máxima) × custo</code>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="sec">
+<div class="wrap">
+<span class="kicker">O que já existe</span>
+<h2>Dois painéis na plataforma</h2>
+<p class="sub">Estoque e Compras existem como módulos da plataforma Tazzin. Abaixo, o que cada um faz hoje, conforme o código.</p>
+
+<div class="callout demo" style="margin-bottom:28px"><span class="ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span><p>A demonstração pública mostra uma seleção de painéis, e Estoque e Compras não estão nela. Por isso esta página usa uma simulação com dados fictícios, em vez de capturas de tela. Para ver estes painéis, é só pedir.</p></div>
+
+<div class="tabs">
+<div role="tablist" aria-label="Módulos de suprimentos">
+<button role="tab" type="button" aria-selected="true">Cobertura de Estoque</button>
+<button role="tab" type="button" aria-selected="false">Compras</button>
+</div>
+<div role="tabpanel" class="on"><div class="grid g2"><div><h3 style="margin-bottom:10px">Onde está o estoque, e quando acaba</h3><p style="color:var(--g600)">Níveis de estoque disponível e alertas de reposição, por produto e por categoria.</p></div>
+<ul class="checks" style="margin:0"><li>SKUs ativos, total de unidades e produtos abaixo do ponto de reposição</li><li>Mapa de áreas: cada retângulo é um produto, o tamanho é a quantidade e a cor agrupa por categoria. Áreas grandes concentram capital parado</li><li>Os 15 produtos com maior volume em estoque</li><li>Movimentações de entrada, saída e transferência, com regra que recusa quantidade zero ou negativa</li></ul></div></div>
+<div role="tabpanel"><div class="grid g2"><div><h3 style="margin-bottom:10px">Gasto, pedidos e fornecedores</h3><p style="color:var(--g600)">Para onde vai o dinheiro de compras e quem são os fornecedores que mais pesam.</p></div>
+<ul class="checks" style="margin:0"><li>Gasto total no período, fornecedores ativos e avaliação média (meta de 4,0 em 5)</li><li>Evolução dos gastos mês a mês, para conferir picos com o planejamento</li><li>Top 10 fornecedores por volume comprado</li><li>Gasto por categoria de fornecimento</li><li>Pedido de compra com status (rascunho, enviado, confirmado, recebido ou cancelado) e data prevista</li></ul></div></div>
+</div>
+
+<div style="height:40px"></div>
+<div class="callout"><span class="ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3A4 4 0 0011 18.7l1-1"/></svg></span><p><b>Cobertura e capital parado dependem do seu consumo.</b> O simulador acima mostra a lógica. Em um projeto, a Tazzin liga o painel ao consumo e ao prazo reais do seu ERP, e define com você a margem de segurança e a cobertura máxima de cada família de itens.</p></div>
+</div></section>
+
+<section class="sec dark">
+<div class="wrap">
+<span class="kicker">Como funciona um projeto</span>
+<h2>Do saldo ao pedido certo</h2>
+<p class="sub">Um estoque saudável protege o caixa, melhora o planejamento e fortalece toda a cadeia de suprimentos.</p>
+<div class="steps four">
+<div class="step rv"><h3>Levantar o consumo</h3><p>Saldo, saídas dos últimos meses e prazo de cada fornecedor, direto do ERP ou de planilha.</p></div>
+<div class="step rv"><h3>Definir as réguas</h3><p>Margem de segurança e cobertura máxima por família, com quem compra e quem consome.</p></div>
+<div class="step rv"><h3>Painel e alertas</h3><p>Semáforo por item, lista do que pedir e aviso quando o pedido chega tarde.</p></div>
+<div class="step rv"><h3>Ajuste contínuo</h3><p>As réguas mudam com a operação. O que muda fica registrado e visível.</p></div>
+</div>
+</div></section>
+
+<section class="sec">
+<div class="wrap narrow">
+<span class="kicker">Dúvidas comuns</span>
+<h2>Perguntas frequentes</h2>
+<div style="height:24px"></div>
+<details class="faq"><summary>Isso exige trocar o ERP?</summary><div class="ans"><p>Não. A Tazzin lê o saldo, as saídas e os pedidos do ERP que você já usa, por API quando existe ou por arquivo, e devolve o que ele não mostra: cobertura, risco de ruptura e capital em excesso.</p></div></details>
+<details class="faq"><summary>A margem de segurança é a mesma para todos os itens?</summary><div class="ans"><p>Não precisa ser. O simulador usa um valor só para ficar simples. Em um projeto, a margem e a cobertura máxima podem variar por família ou até por item, conforme o risco e o custo de cada um.</p></div></details>
+<details class="faq"><summary>E item com consumo irregular?</summary><div class="ans"><p>Consumo médio é o ponto de partida, mas não serve para tudo. Para itens muito irregulares, a conversa é outra: pode ser estoque mínimo fixo ou compra por demanda. O diagnóstico separa o que a média resolve do que pede regra própria.</p></div></details>
+<details class="faq"><summary>Os valores e itens daqui são reais?</summary><div class="ans"><p>Não. Os oito itens, os saldos e os pedidos são fictícios, criados para o simulador. Nenhuma empresa real aparece.</p></div></details>
+</div></section>
+
+<section class="sec alt"><div class="wrap"><div class="band"><div><h2>Quanto dinheiro está parado no seu estoque?</h2><p>Conte como compra e controla hoje. Respondemos com uma ideia de painel e por onde começar.</p></div><div class="cta"><a class="btn btn-p" href="../../contato/">Conversar sobre isto</a><a class="btn btn-g" href="../../solucoes/producao-e-operadores/">Ver Produção e Operadores</a></div></div></div></section>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var DAY=86400000, today=new Date();today.setHours(0,0,0,0);
+  var I=[
+    {k:'chapa',n:'Chapa de aço 3 mm',u:'un',s:120,c:8,p:15,v:410},
+    {k:'parafuso',n:'Parafuso M8 (caixa 100)',u:'cx',s:900,c:6,p:7,v:38},
+    {k:'rolamento',n:'Rolamento 6204',u:'un',s:40,c:3,p:20,v:62},
+    {k:'tinta',n:'Tinta primer 18 L',u:'un',s:60,c:2,p:10,v:520},
+    {k:'caixa',n:'Caixa de papelão 40×30',u:'un',s:3000,c:50,p:12,v:3.2},
+    {k:'oleo',n:'Óleo de corte 20 L',u:'un',s:25,c:1.5,p:14,v:780},
+    {k:'fresa',n:'Fresa 12 mm',u:'un',s:18,c:0.4,p:30,v:290},
+    {k:'luva',n:'Luva nitrílica (caixa)',u:'cx',s:400,c:5,p:5,v:29}
+  ];
+  var PO=[
+    {id:'PC-1042',k:'chapa',q:200,d:9,st:'Confirmado'},
+    {id:'PC-1045',k:'rolamento',q:100,d:19,st:'Enviado'},
+    {id:'PC-1038',k:'oleo',q:20,d:-2,st:'Enviado'},
+    {id:'PC-1050',k:'tinta',q:60,d:25,st:'Confirmado'}
+  ];
+  var brl=function(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})};
+  var n1=function(v){return v.toLocaleString('pt-BR',{maximumFractionDigits:1})};
+  var fmtD=function(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})};
+  var ic={w:'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></svg>',
+          o:'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+          e:'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>',
+          i:'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>'};
+  var seg=5,mx=60,ord='cob',built=false;
+
+  function calc(it){
+    var cob=it.c>0?it.s/it.c:Infinity;
+    var pp=it.c*(it.p+seg);
+    var exc=cob>mx?(it.s-it.c*mx)*it.v:0;
+    var st=cob<it.p?'risk':cob<it.p+seg?'att':cob>mx?'exc':'ok';
+    return {cob:cob,pp:pp,exc:exc,st:st};
+  }
+  var LBL={risk:['Pedir já','b-late'],att:['Atenção','b-warn'],exc:['Excesso','b-info'],ok:['Em dia','b-ok']};
+
+  function build(){
+    var tb=$('esBody');tb.innerHTML='';
+    I.forEach(function(it){
+      var tr=document.createElement('tr');tr.setAttribute('data-k',it.k);
+      tr.innerHTML='<td><b>'+it.n+'</b><small>R$ '+it.v.toLocaleString('pt-BR',{minimumFractionDigits:2})+' por '+it.u+'</small></td>'+
+        '<td class="n"><input type="number" min="0" step="1" value="'+it.s+'" aria-label="Saldo de '+it.n+'" data-f="s"></td>'+
+        '<td class="n"><input type="number" min="0" step="0.1" value="'+it.c+'" aria-label="Consumo por dia de '+it.n+'" data-f="c"></td>'+
+        '<td class="n">'+it.p+'</td><td class="n" data-o="cob"></td><td class="n" data-o="pp"></td><td class="n" data-o="exc"></td><td data-o="st"></td>';
+      tb.appendChild(tr);
+    });
+    tb.addEventListener('input',function(e){
+      var t=e.target;if(t.tagName!=='INPUT')return;
+      var k=t.closest('tr').getAttribute('data-k'),it=I.filter(function(x){return x.k===k})[0];
+      var v=parseFloat(t.value);it[t.getAttribute('data-f')]=isNaN(v)||v<0?0:v;
+      update(false);
+    });
+    built=true;
+  }
+
+  function update(resort){
+    var rows=$('esBody').rows,byK={},R={};
+    I.forEach(function(it){R[it.k]=calc(it)});
+    var risk=0,att=0,exc=0,tot=0;
+    I.forEach(function(it){var r=R[it.k];if(r.st==='risk')risk++;if(r.st==='att')att++;exc+=r.exc;tot+=it.s*it.v});
+    Array.prototype.forEach.call(rows,function(tr){
+      var it=I.filter(function(x){return x.k===tr.getAttribute('data-k')})[0],r=R[it.k];
+      tr.querySelector('[data-o=cob]').textContent=isFinite(r.cob)?n1(r.cob)+' dias':'sem consumo';
+      tr.querySelector('[data-o=pp]').textContent=n1(r.pp)+' '+it.u;
+      tr.querySelector('[data-o=exc]').textContent=r.exc>0?brl(r.exc):'—';
+      tr.querySelector('[data-o=st]').innerHTML='<span class="badge '+LBL[r.st][1]+'">'+LBL[r.st][0]+'</span>';
+    });
+    if(resort!==false)sortRows(R);
+    $('kRisk').textContent=risk;$('kAtt').textContent=att;$('kExc').textContent=brl(exc);$('kTot').textContent=brl(tot);
+    // compras a receber
+    var lateRupt=0,pb=$('poBody'),h='',msgs=[];
+    PO.forEach(function(p){
+      var it=I.filter(function(x){return x.k===p.k})[0],r=R[p.k];
+      var arr=new Date(today.getTime()+p.d*DAY);
+      var rupt=isFinite(r.cob)?r.cob:null;
+      var overdue=p.d<0,after=rupt!==null&&p.d>rupt;
+      if(after)lateRupt++;
+      var stb=overdue?'<span class="badge b-late">Atrasado '+(-p.d)+' dias</span>':after?'<span class="badge b-late">Chega depois da ruptura</span>':'<span class="badge '+(p.st==='Confirmado'?'b-ok':'b-info')+'">'+p.st+'</span>';
+      h+='<tr'+(overdue||after?' class="r-late"':'')+'><td><b>'+p.id+'</b></td><td>'+it.n+'<small>'+p.q+' '+it.u+'</small></td><td>'+fmtD(arr)+'<small>'+(p.d<0?'venceu há '+(-p.d)+' dias':'em '+p.d+' dias')+'</small></td><td>'+stb+'</td></tr>';
+      if(overdue)msgs.push(['e','O pedido '+p.id+' ('+it.n+') está '+(-p.d)+' dias atrasado. Cobre o fornecedor e veja se há alternativa antes de o item faltar.']);
+      else if(after)msgs.push(['e',it.n+': com o consumo atual o item acaba em '+n1(rupt)+' dias, mas o pedido '+p.id+' chega em '+p.d+'. Faltam '+n1(p.d-rupt)+' dias de cobertura. Antecipe a entrega ou faça uma compra complementar.']);
+    });
+    pb.innerHTML=h;
+    I.forEach(function(it){var r=R[it.k];
+      if(r.st==='risk'&&!PO.some(function(p){return p.k===it.k}))msgs.push(['e',it.n+': cobertura de '+n1(r.cob)+' dias, menor que o prazo do fornecedor ('+it.p+' dias), e não há pedido aberto. Peça já.']);
+      var po=PO.filter(function(p){return p.k===it.k})[0];
+      if(r.st==='att'&&!po)msgs.push(['w',it.n+': cobertura de '+n1(r.cob)+' dias, dentro da margem de segurança. Programe o pedido.']);
+      if((r.st==='att'||r.st==='risk')&&po&&po.d>=0&&po.d<=r.cob)msgs.push(['o',it.n+': cobertura de '+n1(r.cob)+' dias, mas o pedido '+po.id+' chega em '+po.d+' dias, a tempo.']);
+      if(r.st==='exc')msgs.push(['i',it.n+': '+n1(r.cob)+' dias de cobertura, acima dos '+mx+' desejados. Há '+brl(r.exc)+' em excesso. Evite comprar de novo por enquanto.']);
+    });
+    var pri={e:0,w:1,i:2,o:3};msgs.sort(function(a,b){return pri[a[0]]-pri[b[0]]});
+    if(!msgs.length)msgs.push(['o','Nenhum item em risco, nenhum pedido atrasado e nenhum excesso relevante.']);
+    $('esMsgs').innerHTML=msgs.slice(0,6).map(function(m){return '<li class="'+m[0]+'">'+ic[m[0]]+'<span>'+m[1]+'</span></li>'}).join('');
+    $('hRisk').textContent=risk+(risk===1?' item':' itens');$('hExc').textContent=brl(exc);$('hTot').textContent=brl(tot);$('hLate').textContent=lateRupt+(lateRupt===1?' pedido':' pedidos');
+  }
+
+  function sortRows(R){
+    var tb=$('esBody'),rows=Array.prototype.slice.call(tb.rows);
+    var key=function(tr){var it=I.filter(function(x){return x.k===tr.getAttribute('data-k')})[0];return {it:it,r:R[it.k]}};
+    rows.sort(function(a,b){var A=key(a),B=key(b);
+      if(ord==='nome')return A.it.n.localeCompare(B.it.n,'pt-BR');
+      if(ord==='exc')return B.r.exc-A.r.exc;
+      return A.r.cob-B.r.cob;});
+    rows.forEach(function(r){tb.appendChild(r)});
+  }
+
+  $('esSeg').addEventListener('input',function(){seg=+this.value;$('oSeg').textContent=seg+' dias';update(true)});
+  $('esMax').addEventListener('input',function(){mx=+this.value;$('oMax').textContent=mx+' dias';update(true)});
+  $('esOrd').addEventListener('change',function(){ord=this.value;update(true)});
+  build();update(true);
+})();
+</script>
+
+</main>
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><img src="../../assets/img/logo_full.png" alt="Tazzin" width="140" height="32"><p>Sistemas de gestão sob medida para indústrias e empresas. Um módulo por vez, sobre o que você já tem.</p></div>
+<div><h4>SOLUÇÕES</h4><ul><li><a href="../../solucoes/calibracao-e-manutencao/">Calibração e Manutenção</a></li><li><a href="../../solucoes/inteligencia-de-mercado/">Inteligência de Mercado</a></li><li><a href="../../solucoes/relacionamento-com-clientes/">Relacionamento com Clientes</a></li><li><a href="../../solucoes/producao-e-operadores/">Produção e Operadores</a></li><li><a href="../../solucoes/estoque-e-compras/">Estoque e Compras</a></li><li><a href="../../solucoes/sob-medida/">Sob Medida</a></li></ul></div>
+<div><h4>TAZZIN</h4><ul><li><a href="../../modulos/">Módulos</a></li><li><a href="../../metodo/">Método</a></li><li><a href="../../qualidade/">Qualidade e segurança</a></li><li><a href="../../sobre/">Sobre</a></li><li><a href="../../contato/">Contato</a></li></ul></div>
+<div><h4>LINKS</h4><ul><li><a href="https://tazzin.streamlit.app/" target="_blank" rel="noopener">Demonstração</a></li><li><a href="https://github.com/DouglasTassinari/Tazzin" target="_blank" rel="noopener">Código no GitHub</a></li><li><a href="https://douglastassinari.github.io/" target="_blank" rel="noopener">Portfólio do fundador</a></li><li><a href="https://www.linkedin.com/in/douglastassinari/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="../../mapa-do-site/">Mapa do site</a></li><li><a href="../../privacidade/">Privacidade</a></li></ul></div>
+</div>
+<div class="bottom"><span>© <span data-year>2026</span> Tazzin. Os dados das demonstrações são fictícios.</span><span>Menos planilhas. Mais controle.</span></div>
+</div></footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

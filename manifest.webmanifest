@@ -1,0 +1,1 @@
+{"name": "Tazzin", "short_name": "Tazzin", "description": "Menos planilhas. Mais controle.", "start_url": "./", "display": "standalone", "background_color": "#0D1B2A", "theme_color": "#0D1B2A", "lang": "pt-BR", "icons": [{"src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}

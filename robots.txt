@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://douglastassinari.github.io/tazzin-site/sitemap.xml
