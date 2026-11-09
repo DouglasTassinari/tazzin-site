@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="46" viewBox="0 0 270 46" role="img" aria-label="Desenvolvido por TAZZIN">
+<rect x="0.5" y="0.5" width="269" height="45" rx="10" fill="#FFFFFF" stroke="#D5DBE3"/>
+<svg x="12" y="8" width="30" height="30" viewBox="0 0 100 100"><path fill="#0D1B2A" d="M30 18H80Q82 18 82 20V35Q82 42 75 42H51V74Q51 82 43 82H38Q30 82 30 74V42H16Q14 42 14 40V34Q14 18 30 18Z"/><rect x="59" y="56" width="23" height="26" rx="8" fill="#4CAF50"/></svg>
+<text x="52" y="28.5" font-family="Poppins,'Segoe UI',Arial,sans-serif" font-size="13" fill="#4B5563">Desenvolvido por</text>
+<text x="168" y="28.5" font-family="Poppins,'Segoe UI',Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#0D1B2A">TAZZIN</text>
+</svg>
